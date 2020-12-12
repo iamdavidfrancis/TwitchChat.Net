@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TwitchChatNet</name>
+    </assembly>
+    <members>
+        <member name="T:TwitchChatNet.ITwitchMessagingService">
+            <summary>
+            Twitch Messaging Service.
+            </summary>
+        </member>
+        <member name="M:TwitchChatNet.ITwitchMessagingService.ConnectAsync(System.Threading.CancellationToken)">
+            <summary>
+            Connect to twitch.
+            </summary>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:TwitchChatNet.ITwitchMessagingService.LeaveChannel(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Leave a channel.
+            </summary>
+            <param name="channel">Channel name.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:TwitchChatNet.ITwitchMessagingService.JoinChannel(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Join a channel.
+            </summary>
+            <param name="channel">Channel name.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:TwitchChatNet.ITwitchMessagingService.SendMessage(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Send a message to a channel.
+            </summary>
+            <param name="channel">The channel name.</param>
+            <param name="message">The message to send.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="T:TwitchChatNet.Models.TwitchConfig">
+            <summary>
+            The Twitch Bot/User Connection info.
+            </summary>
+        </member>
+        <member name="M:TwitchChatNet.Models.TwitchConfig.#ctor(System.String,System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TwitchChatNet.Models.TwitchConfig"/> class.
+            </summary>
+            <param name="loginName">The login name of the Twitch Account.</param>
+            <param name="oauthToken">The OAuth token for the Twitch Account.</param>
+            <param name="initialChannels">Optional, the initial set of channel names to connect to.</param>
+        </member>
+        <member name="P:TwitchChatNet.Models.TwitchConfig.LoginName">
+            <summary>
+            Gets the twitch account login name.
+            </summary>
+        </member>
+        <member name="P:TwitchChatNet.Models.TwitchConfig.OAuthToken">
+            <summary>
+            Gets the twitch account oauth token.
+            </summary>
+        </member>
+        <member name="P:TwitchChatNet.Models.TwitchConfig.InitialChannels">
+            <summary>
+            Gets the initial list of twitch channels to connect to.
+            </summary>
+        </member>
+        <member name="T:TwitchChatNet.TwitchMessagingService">
+            <summary>
+            Twitch Messaging Service.
+            </summary>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.#ctor(TwitchChatNet.Models.TwitchConfig)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TwitchChatNet.TwitchMessagingService"/> class.
+            </summary>
+            <param name="twitchConfig">The config for the Twitch Account to use.</param>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.#ctor(TwitchChatNet.Models.TwitchConfig,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TwitchChatNet.TwitchMessagingService"/> class.
+            </summary>
+            <param name="twitchConfig">The config for the Twitch Account to use.</param>
+            <param name="loggerFactory">Optional Logger Factory.</param>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.ConnectAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.LeaveChannel(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.JoinChannel(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.SendMessage(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TwitchChatNet.TwitchMessagingService.DisposeAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:TwitchChatNet.ValidatorExtensions">
+            <summary>
+            Extensions for validating inputs.
+            </summary>
+        </member>
+        <member name="M:TwitchChatNet.ValidatorExtensions.ThrowIfNull(System.Object,System.String)">
+            <summary>
+            Throws if the input object is null.
+            </summary>
+            <param name="source">The source object to check.</param>
+            <param name="name">The name of the parameter.</param>
+        </member>
+        <member name="M:TwitchChatNet.ValidatorExtensions.ThrowIfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throws if the input object is null or empty.
+            </summary>
+            <param name="source">The source object to check.</param>
+            <param name="name">The name of the parameter.</param>
+        </member>
+    </members>
+</doc>
